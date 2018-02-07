@@ -7,10 +7,10 @@ A ideia é que um sketch minimalista será servido a telemóveis que poderão de
 
 O código é baseado no tutorial do Daniel Schiffman sobre como criar um canvas partilhado com node.js e P5
 
-https://www.youtube.com/watch?v=bjULmG8fqc8
-https://www.youtube.com/watch?v=2hhEOGXcCvg
-https://www.youtube.com/watch?v=HZWmrt3Jy10
-https://www.youtube.com/watch?v=i6eP1Lw4gZk
+<https://www.youtube.com/watch?v=bjULmG8fqc8>  
+<https://www.youtube.com/watch?v=2hhEOGXcCvg>  
+<https://www.youtube.com/watch?v=HZWmrt3Jy10>  
+<https://www.youtube.com/watch?v=i6eP1Lw4gZk>
 
 ## Utilização
 
