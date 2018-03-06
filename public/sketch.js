@@ -4,6 +4,7 @@ var dots =[];
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   background("lemonchiffon");
+  frameRate(20);
   // console.log(PORT);
   socket = io.connect('https://polar-journey-49397.herokuapp.com');
   socket.on('mouse',ping);
@@ -23,7 +24,7 @@ function mouseDragged(){
     x: mouseX/width,
     y: mouseY/height
   }
-  fill('red');
+  fill('blue');
   ellipse(data.x*width,data.y*height,60);
   socket.emit('mouse',data);
 }
