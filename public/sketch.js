@@ -23,6 +23,8 @@ function mouseDragged(){
     x: mouseX/width,
     y: mouseY/height
   }
+  fill('red');
+  ellipse(data.x*width,data.y*height,60);
   socket.emit('mouse',data);
 }
 
