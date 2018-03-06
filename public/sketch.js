@@ -22,7 +22,7 @@ function mouseDragged(){
 }
 
 function ping(data){
-  console.log('client: ', data);
+  // console.log('client: ', data);
   fill('red');
   ellipse(data.x*width,data.y*height,60);
 }
