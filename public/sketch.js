@@ -3,7 +3,7 @@ var socket;
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   background("lemonchiffon");
-  console.log(PORT);
+  // console.log(PORT);
   socket = io.connect('https://polar-journey-49397.herokuapp.com');
   socket.on('mouse',ping);
 }
