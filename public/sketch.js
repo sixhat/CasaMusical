@@ -1,5 +1,6 @@
 var socket;
 // const PORT =process.env.PORT || 3000;
+var dots =[];
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   background("lemonchiffon");
@@ -8,9 +9,13 @@ function setup() {
   socket.on('mouse',ping);
 }
 function draw(){
-  background(255, 250, 205, 5);
+  background(255, 250, 205);
   noFill();
   rect(10,10,width-20,height-20);
+  fill('red');
+  for(let data of dots){
+    ellipse(data.x*width,data.y*height,60);
+  }
 }
 
 function mouseDragged(){
@@ -23,6 +28,8 @@ function mouseDragged(){
 
 function ping(data){
   // console.log('client: ', data);
-  fill('red');
-  ellipse(data.x*width,data.y*height,60);
+  dots.push(data);
+  while (dots.length>50){
+    dots.slice();
+  }
 }
