@@ -30,6 +30,6 @@ function ping(data){
   // console.log('client: ', data);
   dots.push(data);
   while (dots.length>50){
-    dots.slice();
+    dots.shift();
   }
 }
