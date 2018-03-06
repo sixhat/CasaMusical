@@ -1,17 +1,19 @@
 var socket;
+const PORT =process.env.PORT || 3000;
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   background("lemonchiffon");
-  socket = io.connect('http://10.72.3.212:3000');
+  console.log(PORT);
+  socket = io.connect('https://polar-journey-49397.herokuapp.com:${ PORT }');
   socket.on('mouse',ping);
 }
 function draw(){
-  background(255, 250, 205,5);
+  background(255, 250, 205, 5);
   noFill();
   rect(10,10,width-20,height-20);
 }
 
-function mousePressed(){
+function mouseDragged(){
   let data = {
     x: mouseX/width,
     y: mouseY/height
