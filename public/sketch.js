@@ -1,10 +1,10 @@
 var socket;
-const PORT =process.env.PORT || 3000;
+// const PORT =process.env.PORT || 3000;
 function setup() {
   createCanvas(window.innerWidth, window.innerHeight);
   background("lemonchiffon");
   console.log(PORT);
-  socket = io.connect('https://polar-journey-49397.herokuapp.com:${ PORT }');
+  socket = io.connect('https://polar-journey-49397.herokuapp.com');
   socket.on('mouse',ping);
 }
 function draw(){
