@@ -8,13 +8,14 @@ function setup() {
   // console.log(PORT);
   socket = io.connect('https://polar-journey-49397.herokuapp.com');
   socket.on('mouse',ping);
-  noStroke();
+  colorMode(RGB,255,255,255,100);
 }
 function draw(){
   background(255, 250, 205);
   noFill();
+  stroke(0);
   rect(10,10,width-20,height-20);
-
+  noStroke();
   for(let i=0; i<dots.length; i++){
     data=dots[i];
     fill(255,0,0,i);
@@ -35,7 +36,7 @@ function mouseDragged(){
 function ping(data){
   // console.log('client: ', data);
   dots.push(data);
-  while (dots.length>255){
+  while (dots.length>100){
     dots.shift();
   }
 }
