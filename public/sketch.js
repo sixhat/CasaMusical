@@ -30,6 +30,7 @@ function mouseDragged(){
   }
   fill('blue');
   ellipse(data.x*width,data.y*height,60);
+  // ping(data); // Para modo offline
   socket.emit('mouse',data);
 }
 
