@@ -6,6 +6,7 @@ var dots = [];
 var _v;
 var _scale;
 var _pp;
+var bg=0;
 
 function setup() {
 	let size = 0.99 * min(window.innerWidth, window.innerHeight);
@@ -20,12 +21,12 @@ function setup() {
 	rectMode(CENTER);
 	frameRate(20);
 	textFont("Helvetica");
-
+bg=color(255, 250, 205);
 	noStroke();
 }
 
 function draw() {
-	background(255, 250, 205);
+	background(bg);
 
 	push();
 	drawNetStuff();
@@ -64,19 +65,10 @@ function draw() {
 }
 
 function drawNetStuff() {
-	strokeWeight(8);
-	for (let i = 1; i < dots.length; i++) {
-		data = dots[i];
-		pdata = dots[i - 1];
-		fill(255, 0, 0, i / 2);
-		line(data.x * width, data.y * height,
-			pdata.x * width, pdata.y * height,
-		);
-		// ellipse(data.x * width, data.y * height, 30);
-	}
-	if ((frameCount % 3) === 1 && dots.length > 0) {
-		dots.shift();
-	}
+	bg = color(
+		dots.length%255
+	)
+
 }
 
 function mouseDragged() {
@@ -93,7 +85,7 @@ function mouseDragged() {
 function ping(data) {
 	// console.log('client: ', data);
 	dots.push(data);
-	while (dots.length > 100) {
+	while (dots.length > 1000) {
 		dots.shift();
 	}
 }
