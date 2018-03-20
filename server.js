@@ -10,13 +10,13 @@ var io = socket(server);
 
 io.sockets.on('connection', newConnection);
 
-function newConnection(socket){
-  // console.log('Socket:', socket.id);
-  socket.on('mouse', mouseMessage);
+function newConnection(socket) {
+	// console.log('Socket:', socket.id);
+	socket.on('mouse', mouseMessage);
 
-  function mouseMessage(data){
-    // console.log('server: ', data);
-    // socket.broadcast.emit('mouse',data);
-    io.sockets.emit('mouse',data);
-  }
+	function mouseMessage(data) {
+		// console.log('server: ', data);
+		socket.broadcast.emit('mouse', data);
+		// io.sockets.emit('mouse', data);
+	}
 }
